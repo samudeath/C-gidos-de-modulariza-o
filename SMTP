@@ -1,0 +1,34 @@
+package javaMail;
+
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.SimpleEmail;
+
+public class JavaMail {
+
+
+    public static void main(String[] args) {
+        String mail = "";
+        String pass = "";
+        String envio = "";
+        
+        SimpleEmail email = new SimpleEmail();
+        email.setHostName("smtp.gmail.com");
+        email.setSmtpPort(465);
+        email.setAuthenticator(new DefaultAuthenticator (envio, pass));
+        email.setSSLOnConnect(true);
+        
+       try{
+        
+		email.setFrom(mail);
+		email.setSubject("LKKASDSADA");
+		email.setMsg("xuxuxuxuuxuxu");
+		email.addTo(envio);
+		email.send();
+		System.out.println("Amém!");
+       } 
+       catch(Exception e){
+           e.printStackTrace();
+       }
+       
+    }
+    }
