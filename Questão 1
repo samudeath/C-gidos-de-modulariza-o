@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+
+	
+	float lado(float a, float b){
+		float l;
+		
+		l = sqrt((pow (a, 2)) + (pow (b, 2)));
+		return l;
+	}
+	
+ 	
+ 	float diagonal(float c){
+ 		float d, lateral, a1, b1;
+ 		
+ 		lateral = lado(a1, b1); 
+ 		
+ 		d = sqrt(pow(lateral, 2) + pow (c, 2));
+ 		
+ 		return d;
+ 		
+	 }
+ 	
+	int main(){
+		float x, y, z, diag, lad;
+		
+		printf("Digite o lado A, B e C: ");
+		scanf("%f %f %f", &x, &y, &z);
+		printf("\n");
+	
+		lad = lado(x,y);
+		diag = diagonal(z);
+	
+		printf("Valor do lado: %.2f \n", lad);
+		printf("Valor da diagonal: %.2f \n", diag);
+		
+		return 1;
+	}
